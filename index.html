@@ -10,10 +10,23 @@
 </head>
 
 <body>
-    <img src="logo.webp" alt="logo" id="logo">
-    <h1>I'm <span id="name">John</span>,Your <span id="va">Virtual Assistant</span></h1>
-    <img src="voice.avif" alt="voice" id="voice">
-    <button id="btn"><img src="mic.svg" alt="mic"><span id="content">Click here talk to me</span></button>
+    <main class="card">
+        <header class="card-head">
+            <img src="logo.webp" alt="logo" id="logo">
+            <div class="title">
+                <h1>I'm <span id="name">John</span></h1>
+                <p class="subtitle">Your <span id="va">Virtual Assistant</span></p>
+            </div>
+        </header>
+
+        <section class="visual">
+            <img src="voice.avif" alt="voice waveform" id="voice">
+        </section>
+
+        <section class="controls">
+            <button id="btn" aria-label="Start voice input"><img src="mic.svg" alt="mic icon"><span id="content">Click to speak</span></button>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 

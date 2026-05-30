@@ -1,6 +1,6 @@
 let btn = document.querySelector("#btn");
 let content = document.querySelector("#content");
-let voice = document.querySelector("#voice");   // added
+let voice = document.querySelector("#voice");
 
 function speak(text){
     let text_speak = new SpeechSynthesisUtterance(text);
@@ -43,20 +43,23 @@ recognition.onresult = (event)=>{
 };
 
 recognition.onend = ()=>{
-    btn.style.display = "flex";
-    voice.style.display = "none";
+    btn.classList.remove('hidden');
+    voice.classList.remove('voice-visible');
+    voice.classList.add('voice-hidden');
 };
 
 btn.addEventListener("click", ()=>{
     recognition.start();
-    btn.style.display = "none";
-    voice.style.display = "block";
+    btn.classList.add('hidden');
+    voice.classList.remove('voice-hidden');
+    voice.classList.add('voice-visible');
 });
 
 function takeCommand(message){
 
-    btn.style.display = "flex";
-    voice.style.display = "none";
+    btn.classList.remove('hidden');
+    voice.classList.remove('voice-visible');
+    voice.classList.add('voice-hidden');
 
     if(message.includes("hello") || message.includes("hey")){
         speak("Hello Sir, What can I help you?");
